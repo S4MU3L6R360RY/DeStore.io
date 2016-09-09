@@ -19,7 +19,7 @@ hr {
 }
 
 hr.light {
-    border-color: white;
+    border-color: @theme-lighter;
 }
 
 a {
@@ -48,7 +48,7 @@ p {
 
 i {
   &:hover{
-    -webkit-filter: drop-shadow(0px 0px 8px fade(@theme-dark, 80%));
+    -webkit-filter: drop-shadow(0px 0px 8px fade(@theme-light, 80%));
     -moz-transition: all .3s ease-in;
     -o-transition: all .3s ease-in;
     -webkit-transition: all .3s ease-in;
@@ -62,15 +62,15 @@ i {
 
 .bg-dark {
     background-color: @gray-darker;
-    color: white;
+    color: @theme-lighter;
 }
 
 .text-faded {
-    color: fade(white, 70%);
+    color: fade(@theme-lighter, 70%);
 }
 
 section {
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 aside {
@@ -84,7 +84,7 @@ aside {
 // Navigation
 
 .navbar-default {
-    background-color: white;
+    background-color: @theme-lighter;
     border-color: fade(@gray-darker, 5%);
     .sans-serif-font;
     .transition-all;
@@ -130,23 +130,23 @@ aside {
     }
     @media (min-width: 768px) {
         background-color: transparent;
-        border-color: fade(white, 30%);
+        border-color: fade(@theme-lighter, 30%);
         .navbar-header .navbar-brand {
-            color: fade(white, 70%);
+            color: fade(@theme-lighter, 70%);
             &:hover,
             &:focus {
-                color: white;
+                color: @theme-lighter;
             }
         }
         .nav > li > a,
         .nav > li > a:focus {
-            color: fade(white, 70%);
+            color: fade(@theme-lighter, 70%);
             &:hover {
-                color: white;
+                color: @theme-lighter;
             }
         }
         &.affix {
-            background-color: white;
+            background-color: @theme-lighter;
             border-color: fade(@gray-darker, 5%);
             .navbar-header .navbar-brand {
                 color: @theme-primary;
@@ -177,7 +177,7 @@ header {
     background-position: center;
     background-image: url('../img/headertreesdark.jpg');
     text-align: center;
-    color: white;
+    color: @theme-lighter;
     .header-content {
         position: relative;
         text-align: center;
@@ -196,9 +196,10 @@ header {
             }
             p {
                 font-weight: 300;
-                color: fade(white, 70%);
+                color: fade(@theme-lighter, 70%);
                 font-size: 16px;
                 margin-bottom: 50px;
+                text-shadow: 5px, 5px, 5px, @theme-primary;
             }
         }
     }
@@ -266,7 +267,7 @@ header {
     max-width: 650px;
     margin: 0 auto;
     .portfolio-box-caption {
-        color: white;
+        color: @theme-lighter;
         opacity: 1;
         display: block;
         background: fade(@theme-primary, 40%);
@@ -338,11 +339,11 @@ header {
 
 // Button Styles
 .btn-default {
-    .button-variant(@gray-darker;white;white);
+    .button-variant(@gray-darker;@theme-lighter;@theme-lighter);
 }
 
 .btn-primary {
-    .button-variant(white;@theme-primary;@theme-primary);
+    .button-variant(@theme-lighter;@theme-primary;@theme-primary);
 }
 
 .btn {
@@ -360,29 +361,46 @@ header {
 // Extras
 // -- Highlight Color Customization
 ::-moz-selection {
-    color: white;
+    color: @theme-lighter;
     text-shadow: none;
     background: @gray-darker;
 }
 
 ::selection {
-    color: white;
+    color: @theme-lighter;
     text-shadow: none;
     background: @gray-darker;
 }
 
 img::selection {
-    color: white;
+    color: @theme-lighter;
     background: transparent;
 }
 
 img::-moz-selection {
-    color: white;
+    color: @theme-lighter;
     background: transparent;
 }
 
 body {
     webkit-tap-highlight-color: @gray-darker;
+}
+
+#thanks-section,
+#contact {
+  padding-bottom: 4px;
+}
+
+#thanks {
+  font-style: italic;
+  text-align: center;
+}
+
+#brand-logo {
+  img {
+    height:200px;
+    margin: 0 auto;
+  }
 }
 
 footer {
@@ -422,5 +440,8 @@ footer {
       padding: 35px 0 23px;
       margin: 0;
     }
+  }
+  #supportOSS{
+    padding:8px;
   }
 }
