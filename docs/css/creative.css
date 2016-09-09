@@ -42,6 +42,13 @@ p {
   line-height: 1.5;
   margin-bottom: 20px;
 }
+i:hover {
+  -webkit-filter: drop-shadow(0px 0px 8px rgba(45, 108, 163, 0.8));
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
 .bg-primary {
   background-color: #173753;
 }
@@ -208,6 +215,19 @@ header .header-content .header-content-inner p {
     margin-right: auto;
   }
 }
+#release {
+  font-style: italic;
+  color: #ffffff;
+}
+#release:hover {
+  color: #070707;
+  text-shadow: -1px 1px 8px #265b89, 1px -1px 8px #7dafdb;
+  -webkit-transition: 500ms linear 0s;
+  -moz-transition: 500ms linear 0s;
+  -o-transition: 500ms linear 0s;
+  transition: 500ms linear 0s;
+  outline: 0 none;
+}
 .section-heading {
   margin-top: 0;
 }
@@ -231,9 +251,9 @@ header .header-content .header-content-inner p {
 }
 .portfolio-box .portfolio-box-caption {
   color: white;
-  opacity: 0;
+  opacity: 1;
   display: block;
-  background: rgba(23, 55, 83, 0.9);
+  background: rgba(23, 55, 83, 0.4);
   position: absolute;
   bottom: 0;
   text-align: center;
@@ -265,6 +285,7 @@ header .header-content .header-content-inner p {
 }
 .portfolio-box:hover .portfolio-box-caption {
   opacity: 1;
+  background: rgba(23, 55, 83, 0.6);
 }
 .portfolio-box:focus {
   outline: none;
@@ -413,4 +434,41 @@ img::-moz-selection {
 }
 body {
   webkit-tap-highlight-color: #222222;
+}
+footer .footer-basic-centered {
+  background-color: #173753;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  font: normal 18px sans-serif;
+  color: #ffffff;
+  padding: 45px;
+  margin-top: 80px;
+}
+footer .footer-basic-centered a {
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+}
+footer .footer-basic-centered a:hover {
+  color: #7dafdb;
+  text-decoration: underline;
+}
+footer .footer-basic-centered .footer-company-motto {
+  color: #ffffff;
+  font-size: 24px;
+  margin: 0;
+}
+footer .footer-basic-centered .footer-company-name {
+  color: #ffffff;
+  font-size: 14px;
+  margin: 0;
+}
+footer .footer-basic-centered .footer-links {
+  list-style: none;
+  font-weight: bold;
+  color: #7dafdb;
+  padding: 35px 0 23px;
+  margin: 0;
 }

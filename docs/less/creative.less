@@ -46,6 +46,16 @@ p {
     margin-bottom: 20px;
 }
 
+i {
+  &:hover{
+    -webkit-filter: drop-shadow(0px 0px 8px fade(@theme-dark, 80%));
+    -moz-transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+    -webkit-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+  }
+}
+
 .bg-primary {
     background-color: @theme-primary;
 }
@@ -219,6 +229,20 @@ header {
     }
 }
 
+#release {
+  font-style: italic;
+  color: @theme-lighter;
+  &:hover {
+    color: #070707;
+    text-shadow: -1px 1px 8px @theme-darker, 1px -1px 8px @theme-light;
+    -webkit-transition: 500ms linear 0s;
+    -moz-transition: 500ms linear 0s;
+    -o-transition: 500ms linear 0s;
+    transition: 500ms linear 0s;
+    outline: 0 none;
+  }
+}
+
 // Sections
 
 .section-heading {
@@ -243,9 +267,9 @@ header {
     margin: 0 auto;
     .portfolio-box-caption {
         color: white;
-        opacity: 0;
+        opacity: 1;
         display: block;
-        background: fade(@theme-primary, 90%);
+        background: fade(@theme-primary, 40%);
         position: absolute;
         bottom: 0;
         text-align: center;
@@ -276,6 +300,7 @@ header {
     &:hover {
         .portfolio-box-caption {
             opacity: 1;
+            background: fade(@theme-primary, 60%);
         }
     }
     &:focus {
@@ -358,4 +383,44 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: @gray-darker;
+}
+
+footer {
+  .footer-basic-centered{
+    background-color: @theme-primary;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    font: normal 18px sans-serif;
+    color:  @theme-lighter;
+    padding: 45px;
+    margin-top: 80px;
+    a {
+      display:inline-block;
+      text-decoration: none;
+      color: @theme-lighter;
+      &:hover{
+        color: @theme-light;
+        text-decoration: underline;
+      }
+    }
+    .footer-company-motto {
+      color:  @theme-lighter;
+      font-size: 24px;
+      margin: 0;
+    }
+    .footer-company-name{
+      color:  @theme-lighter;
+      font-size: 14px;
+      margin: 0;
+    }
+    .footer-links{
+      list-style: none;
+      font-weight: bold;
+      color:  @theme-light;
+      padding: 35px 0 23px;
+      margin: 0;
+    }
+  }
 }
